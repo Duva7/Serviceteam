@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .card {
+            display: flex;
+            gap: 20px;
+            max-width: 50%;
+            align-items: center;
+        }
+
+        .card-body {
+            max-width: 66%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">   
+        <div class="header">
+        </div>
+        <div class="article">
+            <h2 id="title">Service Team</h2>
+        </div>
+        <div class="footer">
+            <div class="card">
+                <div class="circle" id="textb">
+                    ZZpg
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="subtitle"><br>Card tittle </h5>
+                    <p class="card-text" id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Numquam, ea quaerat
+                        repudiandae facere fugiat inventore dignissimos adipisci.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="circle" id="textb">
+                    ZZpg
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="subtitle">Card Tittle</h5>
+                    <p class="card-text" id="parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Numquam, ea quaerat
+                        repudiandae facere fugiat inventore dignissimos adipisci.</p>
+                </div>
+            </div>
+          
+
+        </div>
+        
+
+    </div>
+
+    <script>
+        fetch(
+            "https://gist.githubusercontent.com/Duva7/13fcd02e2f1c76909a5c62d5611afedf/raw/b92e6c9aa2b069d205738c8f09c6bffc6cd25332/duvan.json"
+        )
+        .then((res)=>res.json())
+        .then((res)=>{
+            console.log(res.title)
+            document.getElementById("title").textContent = res.title;
+            console.log(res.title)
+            document.getElementById("textb").textContent = res.textb;
+            console.log(res.textb)
+            document.getElementById("subtitle").textContent = res.subtitle;
+            console.log(res.subtitle)
+            document.getElementById("parrafo").textContent = res.parrafo;
+            console.log(res.parrafo)
+        })
+        .catch((e)=>{console.log(e)})
+    </script>
+</body>
+
+</html>
